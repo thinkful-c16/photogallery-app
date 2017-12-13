@@ -27,7 +27,7 @@ export default class  Gallery extends React.Component {
 
     toggle() {
         this.setState({
-            showGallery: true
+            showGallery: true 
         })
     }
     
