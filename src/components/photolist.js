@@ -4,7 +4,6 @@ import './photolist.css'
 //children takes data and parent does logic and pass variables to the children
 
 export default function Photos(props) {
-    console.log(props)
     const imageList = props.photos.map((image, index) => {
         return (
         <li key={index}>

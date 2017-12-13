@@ -3,13 +3,16 @@ import PhotoList from './photolist'
 import NextButton from './nextbutton'
 import BackButton from './backbutton'
 import Header from './header'
+import ViewAll from './viewall'
+import ViewAllButton from './viewallbutton'
 
 
 export default class  Gallery extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            currentImage: 0
+            currentImage: 0,
+            showGallery: false
         }
     }
 
@@ -21,14 +24,35 @@ export default class  Gallery extends React.Component {
         if (this.state.currentImage <= 0 ) {this.setState({currentImage: 4})
     } else {this.setState({currentImage: this.state.currentImage-1})}
 }
+
+    toggle() {
+        this.setState({
+            showGallery: true
+        })
+    }
     
     render() {
+//components are objects but we see tags
+//cannot assign many elements to one variable
+//
+        let view;
+        if (this.state.showGallery === false) {
+            view = 
+            <div>
+                <PhotoList photos={this.props.photos} currentPhoto={this.state.currentImage} />
+                <NextButton onClick={ () => this.nextImage()} />
+                <BackButton onClick={ () => this.prevImage()} />
+            </div>
+        } else {
+            view = <ViewAll photos={this.props.photos} onClick={() => this.toggle()} />
+            
+        }
+            
         return (
         <div className='mainPage' >
             <Header />
-            <PhotoList photos={this.props.photos} currentPhoto={this.state.currentImage} />
-            <NextButton onClick={ () => this.nextImage()} />
-            <BackButton onClick={ () => this.prevImage()} />
+            {view}
+            <ViewAllButton onClick={() => this.toggle()} />
         </div>
         )
     }
