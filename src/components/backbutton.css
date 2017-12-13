@@ -1,0 +1,15 @@
+.button {
+        width: 40%;
+        height: 50%
+
+    }
+
+li {
+    display: inline-block
+}
+    
+/* .button:hover {
+        background-color: #4CAF50; 
+        color: white;
+    }
+     */
