@@ -10,9 +10,10 @@ export default function Photos(props) {
         </li>
         )
     });
+    const random = imageList[Math.floor(imageList.length * Math.random())]
 return (
     <ul className="image-list">
-    {imageList[1]}
+    {random}
     </ul>
 );
 
