@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import Gallery from './components/gallery';
-import images from './images.json'
+import animals from './images.json'
 
-ReactDOM.render(<Gallery photos={images}/>, document.getElementById('root')
+ReactDOM.render(<Gallery photos={animals}/>, document.getElementById('root')
 );
 
