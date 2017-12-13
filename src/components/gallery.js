@@ -27,7 +27,7 @@ export default class  Gallery extends React.Component {
 
     toggle() {
         this.setState({
-            showGallery: true 
+            showGallery: (this.state.showGallery ? false : true) 
         })
     }
     
@@ -44,7 +44,7 @@ export default class  Gallery extends React.Component {
                 <BackButton onClick={ () => this.prevImage()} />
             </div>
         } else {
-            view = <ViewAll photos={this.props.photos} onClick={() => this.toggle()} />
+            view = <ViewAll photos={this.props.photos}/>
             
         }
             
