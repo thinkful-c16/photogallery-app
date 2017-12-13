@@ -1,30 +1,28 @@
 import React from 'react';
 import PhotoList from './photolist'
 // import UserButtons from './userbuttons'
-import NextButton from './userbuttons'
+import NextButton from './nextbutton'
 
-// export default class Gallery extends React.Component {
-//     constructor(props) {
-//         super(props)
-//         // this.state
-//     }
 
-//     render() {
-//         return (
-//             <main>
-//                 <PhotoList photos={props.photos}/>
-//                 {/* <UserButtons /> */}
-//             </main>
-//         )
-//     }
-// }
+export default class  Gallery extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            currentImage: 0
+        }
+    }
 
-export default function Gallery(props) {
+    updateImage() {
+        this.setState({currentImage: this.state.currentImage+1})        
+}
     
-    return (
+    render() {
+        return (
         <div>
-            <PhotoList photos={props.photos} />
-            <NextButton />
+            <PhotoList photos={this.props.photos} currentPhoto={this.state.currentImage} />
+            <NextButton onClick={ () => this.updateImage()}/>
         </div>
-    )
+        )
+    }
+
 }
