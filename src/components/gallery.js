@@ -1,6 +1,7 @@
 import React from 'react';
 import PhotoList from './photolist'
 // import UserButtons from './userbuttons'
+import NextButton from './userbuttons'
 
 // export default class Gallery extends React.Component {
 //     constructor(props) {
@@ -19,7 +20,11 @@ import PhotoList from './photolist'
 // }
 
 export default function Gallery(props) {
+    
     return (
-        <div><PhotoList photos={props.photos} /></div>
+        <div>
+            <PhotoList photos={props.photos} />
+            <NextButton />
+        </div>
     )
 }
