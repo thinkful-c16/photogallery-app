@@ -1,3 +1,8 @@
 .viewall {
     display: inline-block
 }
+
+.viewAllItem {
+    list-style: none;
+    display: inline-block;
+}

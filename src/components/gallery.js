@@ -1,10 +1,8 @@
 import React from 'react';
 import PhotoList from './photolist'
-import NextButton from './nextbutton'
-import BackButton from './backbutton'
 import Header from './header'
 import ViewAll from './viewall'
-import ViewAllButton from './viewallbutton'
+import Button from './button'
 
 
 export default class  Gallery extends React.Component {
@@ -27,21 +25,27 @@ export default class  Gallery extends React.Component {
 
     toggle() {
         this.setState({
-            showGallery: (this.state.showGallery ? false : true) 
+            //bang means not
+            //not false means true
+            //then set not true
+            //bang helps you toggle a boolean value
+            //bang true (!true) is always false
+            // showGallery: !this.state.showGallery (use on anything truthy or falsey)
+            showGallery: (this.state.showGallery ? false : true)
         })
     }
     
     render() {
 //components are objects but we see tags
 //cannot assign many elements to one variable
-//
+//can have multiple return statements
         let view;
         if (this.state.showGallery === false) {
             view = 
             <div>
                 <PhotoList photos={this.props.photos} currentPhoto={this.state.currentImage} />
-                <NextButton onClick={ () => this.nextImage()} />
-                <BackButton onClick={ () => this.prevImage()} />
+                <Button buttonText='Next Image' onClick={ () => this.nextImage()} />
+                <Button buttonText='Prev Image' onClick={ () => this.prevImage()} />
             </div>
         } else {
             view = <ViewAll photos={this.props.photos}/>
@@ -52,7 +56,7 @@ export default class  Gallery extends React.Component {
         <div className='mainPage' >
             <Header />
             {view}
-            <ViewAllButton onClick={() => this.toggle()} />
+            <Button buttonText={this.state.showGallery ? 'Go Back' : 'Show all images'} onClick={() => this.toggle()} />
         </div>
         )
     }

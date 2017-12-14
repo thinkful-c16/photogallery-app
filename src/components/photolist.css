@@ -1,12 +1,13 @@
 img {
 
-    height: auto;
-    max-width: 50%;
+    height: 400px;
+    /* max-width: 50%; */
     border: 1px solid black;
 }
 
 li {
     margin: 0 auto;
+
 
 }
 
