@@ -1,7 +1,7 @@
 import React from 'react'
 
 export default function Header() {
-    const text = 'Cute Animal Gallery'
+    const text = 'Cute Puppies Gallery'
     return (
         <header>
             <h1>

@@ -25,13 +25,7 @@ export default class  Gallery extends React.Component {
 
     toggle() {
         this.setState({
-            //bang means not
-            //not false means true
-            //then set not true
-            //bang helps you toggle a boolean value
-            //bang true (!true) is always false
-            // showGallery: !this.state.showGallery (use on anything truthy or falsey)
-            showGallery: (this.state.showGallery ? false : true)
+            showGallery: !this.state.showGallery
         })
     }
     
@@ -44,8 +38,8 @@ export default class  Gallery extends React.Component {
             view = 
             <div>
                 <PhotoList photos={this.props.photos} currentPhoto={this.state.currentImage} />
-                <Button buttonText='Next Image' onClick={ () => this.nextImage()} />
-                <Button buttonText='Prev Image' onClick={ () => this.prevImage()} />
+                <Button buttonText='Next Image' onClick={ () => this.nextImage() } />
+                <Button buttonText='Prev Image' onClick={ () => this.prevImage() } />
             </div>
         } else {
             view = <ViewAll photos={this.props.photos}/>

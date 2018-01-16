@@ -12,7 +12,6 @@ export default function ViewAll(props) {
     return (
         <div className='viewall'>
         {imageList}
-        
         </div>
     )
 }

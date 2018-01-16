@@ -5,8 +5,12 @@
         background-color: rgb(80, 104, 126);
         border: 0;
         margin-bottom: 10px;
+        display: inline-block;
     }
 
+.buttonContainer {
+    text-align: center;
+}
     
 .button:hover {
         background-color: #4CAF50; 

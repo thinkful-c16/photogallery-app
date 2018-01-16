@@ -5,6 +5,7 @@ import './photolist.css'
 
 export default function Photos(props) {
     const imageList = props.photos.map((image, index) => {
+
         return (
         <li key={index}>
         <img src={image.src} alt={image.alt} />
